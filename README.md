@@ -1,4 +1,4 @@
-# kickbox
+# cfkickbox
 Kickbox.com ColdFusion Rest API Client
 
 Super lightweight api only has a single function "verify" to check for legitimate email addresses.
