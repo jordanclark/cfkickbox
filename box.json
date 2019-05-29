@@ -1,0 +1,38 @@
+{
+    "name":"cfkickbox",
+    "slug":"cfkickbox",
+    "version":"0.5.0",
+    "author":"Jordan Clark <jordanclark@gmail.com>",
+    "keywords":[
+        "kickbox",
+        "email-verify",
+        "api",
+        "rest"
+    ],
+    "shortDescription":"API client for Kickbox.com",
+    "type":"modules",
+    "location":"jordanclark/cfkickbox#v0.5.0",
+    "repository":{
+        "URL":"https://github.com/jordanclark/cfkickbox.git",
+        "type":"GIT"
+    },
+    "homepage":"https://github.com/jordanclark/cfkickbox",
+    "bugs":"https://github.com/jordanclark/cfkickbox/issues",
+    "license":[
+        {
+            "type":"Apache-2.0",
+            "URL":"https://github.com/jordanclark/cfkickbox/blob/master/LICENSE"
+        }
+    ],
+    "private":false,
+    "ignore":[
+        "**/.*",
+        "/test/",
+        "/tests/"
+    ],
+    "scripts":{
+        "postVersion":"package set location='jordanclark/cfkickbox#v`package version`'",
+        "onRelease":"publish",
+        "postPublish":"!git push --follow-tags"
+    }
+}
