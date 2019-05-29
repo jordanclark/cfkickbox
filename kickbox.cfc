@@ -1,13 +1,15 @@
 component {
 
-	function init( required string apiKey, string apiUrl= "https://api.kickbox.com/v2", numeric httpTimeOut= 5, boolean debug= false ) {
+	function init(
+		required string apiKey
+	,	string apiUrl= "https://api.kickbox.com/v2"
+	,	numeric httpTimeOut= 5
+	,	boolean debug= ( request.debug ?: false )
+	) {
 		this.apiKey= arguments.apiKey;
 		this.apiUrl= arguments.apiUrl;
 		this.httpTimeOut= arguments.httpTimeOut;
 		this.debug= arguments.debug;
-		if ( structKeyExists( request, "debug" ) && request.debug == true ) {
-			this.debug= request.debug;
-		}
 		this.validate= this.verify;
 		return this;
 	}
