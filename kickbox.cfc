@@ -80,7 +80,7 @@ component {
 		} else if ( out.statusCode == "500" ) {
 			//  server error 
 			out.success= false;
-		} else if ( listFind( "4,5", left( out.statusCode, 1 ) ) {
+		} else if ( listFind( "4,5", left( out.statusCode, 1 ) ) ) {
 			//  unknown error 
 			out.success= false;
 		} else if ( out.statusCode == "" ) {
