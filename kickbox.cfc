@@ -4,8 +4,9 @@ component {
 		required string apiKey
 	,	string apiUrl= "https://api.kickbox.com/v2"
 	,	numeric httpTimeOut= 5
-	,	boolean debug= ( request.debug ?: false )
+	,	boolean debug
 	) {
+		arguments.debug = ( arguments.debug ?: request.debug ?: false );
 		this.apiKey= arguments.apiKey;
 		this.apiUrl= arguments.apiUrl;
 		this.httpTimeOut= arguments.httpTimeOut;
@@ -23,7 +24,12 @@ component {
 				request.log( arguments.input );
 			}
 		} else if( this.debug ) {
-			cftrace( text=( isSimpleValue( arguments.input ) ? arguments.input : "" ), var=arguments.input, category="kickbox", type="information" );
+			var info= ( isSimpleValue( arguments.input ) ? arguments.input : serializeJson( arguments.input ) );
+			cftrace(
+				var= "info"
+			,	category= "kickbox"
+			,	type= "information"
+			);
 		}
 		return;
 	}
